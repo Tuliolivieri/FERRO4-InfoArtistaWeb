@@ -16,10 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
+//import javax.swing.text.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -59,11 +60,12 @@ public class BuscaArtista extends HttpServlet {
         {
             factory=DocumentBuilderFactory.newInstance();
             builder = factory.newDocumentBuilder();
-            doc = (Document) builder.parse(new InputSource(new StringReader(consulta)));
-            System.out.println("MFOEE");
-            System.out.println(doc.getText(0, 100));
+            //doc = builder.parse(consulta);
+            doc=builder.parse(new InputSource(consulta));
+
+            System.out.println(doc.getTextContent());
         } 
-        catch (ParserConfigurationException | BadLocationException| SAXException e) 
+        catch (ParserConfigurationException | SAXException e) 
         {
             System.out.println("Erro: " + e.getMessage());
         }
