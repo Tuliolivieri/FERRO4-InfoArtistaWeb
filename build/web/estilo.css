@@ -24,6 +24,8 @@ main
     align-content: center;
     align-items: center;
     flex-direction: column;
+    
+    
 }
 
 input
@@ -39,7 +41,7 @@ header
     background-color: #0367A6;
     
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 15vh;
     
     color: white;
@@ -47,7 +49,7 @@ header
     font-size: 56px;
     align-content: center;
     align-items: center;
-    padding-left: 15vw; 
+    padding-left: 10vw; 
 }
 
 input
